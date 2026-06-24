@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_778f8437153f792956dbaad7adc8a8c7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+position: fixed;
+bottom: 50px;
+left: 50px;
+width: 350px;
+max-height: 350px;
+overflow-y: auto;
+background-color: white;
+border: 2px solid black;
+z-index:9999;
+font-size:12px;
+padding:10px;">
+<b>RT130 Intersections</b><br><br>
+<table>
+<tr><td><b>1</b></td><td>Charleston Road</td></tr><tr><td><b>2</b></td><td>Van Sciver Pkwy</td></tr><tr><td><b>3</b></td><td>Salem Rd</td></tr><tr><td><b>4</b></td><td>Lincoln Ave</td></tr><tr><td><b>5</b></td><td>Wood street (NB)</td></tr><tr><td><b>6</b></td><td>Wood street (SB)</td></tr><tr><td><b>7</b></td><td>High Street (NB)</td></tr><tr><td><b>8</b></td><td>High Street (SB)</td></tr><tr><td><b>9</b></td><td>Jacksonville (NB)</td></tr><tr><td><b>10</b></td><td>Jacksonville (SB)</td></tr><tr><td><b>11</b></td><td>Columbus Rd</td></tr><tr><td><b>12</b></td><td>Neck Rd</td></tr><tr><td><b>13</b></td><td>Dulty's Lane</td></tr><tr><td><b>14</b></td><td>Florence Columbus Rd</td></tr>
+</table>
+</div>
+    
+            <div class="folium-map" id="map_778f8437153f792956dbaad7adc8a8c7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_778f8437153f792956dbaad7adc8a8c7 = L.map(
+                "map_778f8437153f792956dbaad7adc8a8c7",
+                {
+                    center: [40.07446278571428, -74.85080621428571],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1cdfd8f16493af57d9d6cf59f52857d9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1cdfd8f16493af57d9d6cf59f52857d9.addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var marker_7b3bb7c413fae71ea5ff9d11c55bbadf = L.marker(
+                [40.045812, -74.902345],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_d41a3931d557202a8fba1615c23290bf = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                1\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_60b33b6d886b7b0ccfd5dc1dc2f6d0dd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc617d9eae0e2a572b9f852eca9e6b96 = $(`<div id="html_bc617d9eae0e2a572b9f852eca9e6b96" style="width: 100.0%; height: 100.0%;">1. Charleston Road</div>`)[0];
+                popup_60b33b6d886b7b0ccfd5dc1dc2f6d0dd.setContent(html_bc617d9eae0e2a572b9f852eca9e6b96);
+            
+        
+
+        marker_7b3bb7c413fae71ea5ff9d11c55bbadf.bindPopup(popup_60b33b6d886b7b0ccfd5dc1dc2f6d0dd)
+        ;
+
+        
+    
+    
+            marker_7b3bb7c413fae71ea5ff9d11c55bbadf.bindTooltip(
+                `<div>
+                     1. Charleston Road
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7b3bb7c413fae71ea5ff9d11c55bbadf.setIcon(div_icon_d41a3931d557202a8fba1615c23290bf);
+            
+    
+            var marker_a9b5663344dfc694a3f2e33475905b7a = L.marker(
+                [40.057051, -74.887349],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_f38640ba9a97c49ffc87c0106ed54ed1 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                2\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_904f3167bcae74cf6d6534d21fb3a15c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8478a572d5fc7bb7a45c43c0c85de51e = $(`<div id="html_8478a572d5fc7bb7a45c43c0c85de51e" style="width: 100.0%; height: 100.0%;">2. Van Sciver Pkwy</div>`)[0];
+                popup_904f3167bcae74cf6d6534d21fb3a15c.setContent(html_8478a572d5fc7bb7a45c43c0c85de51e);
+            
+        
+
+        marker_a9b5663344dfc694a3f2e33475905b7a.bindPopup(popup_904f3167bcae74cf6d6534d21fb3a15c)
+        ;
+
+        
+    
+    
+            marker_a9b5663344dfc694a3f2e33475905b7a.bindTooltip(
+                `<div>
+                     2. Van Sciver Pkwy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a9b5663344dfc694a3f2e33475905b7a.setIcon(div_icon_f38640ba9a97c49ffc87c0106ed54ed1);
+            
+    
+            var marker_c24c7985e1bd828be5db515c750857f6 = L.marker(
+                [40.070576, -74.866248],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_c19c2e485eb867d1fde037faab8b4eb2 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                3\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_5a6cbb620b703a26bf9d5f33b63df2f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9fcad89a1245caf06c9046a6910de82b = $(`<div id="html_9fcad89a1245caf06c9046a6910de82b" style="width: 100.0%; height: 100.0%;">3. Salem Rd</div>`)[0];
+                popup_5a6cbb620b703a26bf9d5f33b63df2f9.setContent(html_9fcad89a1245caf06c9046a6910de82b);
+            
+        
+
+        marker_c24c7985e1bd828be5db515c750857f6.bindPopup(popup_5a6cbb620b703a26bf9d5f33b63df2f9)
+        ;
+
+        
+    
+    
+            marker_c24c7985e1bd828be5db515c750857f6.bindTooltip(
+                `<div>
+                     3. Salem Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c24c7985e1bd828be5db515c750857f6.setIcon(div_icon_c19c2e485eb867d1fde037faab8b4eb2);
+            
+    
+            var marker_8c0efd6142592df166c005dd60ba2b42 = L.marker(
+                [40.071201, -74.863106],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_e65696ae42598b48ffb934386792b7f1 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                4\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_b3b0e764c64540554267ec12704360ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_29743f42d9237650849ac19a91646037 = $(`<div id="html_29743f42d9237650849ac19a91646037" style="width: 100.0%; height: 100.0%;">4. Lincoln Ave</div>`)[0];
+                popup_b3b0e764c64540554267ec12704360ee.setContent(html_29743f42d9237650849ac19a91646037);
+            
+        
+
+        marker_8c0efd6142592df166c005dd60ba2b42.bindPopup(popup_b3b0e764c64540554267ec12704360ee)
+        ;
+
+        
+    
+    
+            marker_8c0efd6142592df166c005dd60ba2b42.bindTooltip(
+                `<div>
+                     4. Lincoln Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8c0efd6142592df166c005dd60ba2b42.setIcon(div_icon_e65696ae42598b48ffb934386792b7f1);
+            
+    
+            var marker_c4545ba1b9e5ad4814cef1fa98e6797e = L.marker(
+                [40.070459, -74.858391],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_a5473a1b40257f8e77e8462b0adf4dee = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                5\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_b31109854b78e6a86e9b18fb920ddf39 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec3b82fcf0adb04ad393a735c50f61eb = $(`<div id="html_ec3b82fcf0adb04ad393a735c50f61eb" style="width: 100.0%; height: 100.0%;">5. Wood street (NB)</div>`)[0];
+                popup_b31109854b78e6a86e9b18fb920ddf39.setContent(html_ec3b82fcf0adb04ad393a735c50f61eb);
+            
+        
+
+        marker_c4545ba1b9e5ad4814cef1fa98e6797e.bindPopup(popup_b31109854b78e6a86e9b18fb920ddf39)
+        ;
+
+        
+    
+    
+            marker_c4545ba1b9e5ad4814cef1fa98e6797e.bindTooltip(
+                `<div>
+                     5. Wood street (NB)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c4545ba1b9e5ad4814cef1fa98e6797e.setIcon(div_icon_a5473a1b40257f8e77e8462b0adf4dee);
+            
+    
+            var marker_e33c73e26379e69ad828be31bb11eb6d = L.marker(
+                [40.071318, -74.858543],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_0b48cd22b10e369e6c117c26d406f2b7 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                6\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_6ea3e4f6bb643eba109ed8b50fc09034 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_06f8e31883254b5715465c8c12973ef5 = $(`<div id="html_06f8e31883254b5715465c8c12973ef5" style="width: 100.0%; height: 100.0%;">6. Wood street (SB)</div>`)[0];
+                popup_6ea3e4f6bb643eba109ed8b50fc09034.setContent(html_06f8e31883254b5715465c8c12973ef5);
+            
+        
+
+        marker_e33c73e26379e69ad828be31bb11eb6d.bindPopup(popup_6ea3e4f6bb643eba109ed8b50fc09034)
+        ;
+
+        
+    
+    
+            marker_e33c73e26379e69ad828be31bb11eb6d.bindTooltip(
+                `<div>
+                     6. Wood street (SB)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e33c73e26379e69ad828be31bb11eb6d.setIcon(div_icon_0b48cd22b10e369e6c117c26d406f2b7);
+            
+    
+            var marker_905995c49f3557171c11787fe01e94cb = L.marker(
+                [40.070885, -74.855107],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_d47128a6e79e3d18d99db223ab681939 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                7\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_8a4f61ffa2bce51777df37a014e4ee89 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_765c2a6e93071618a9381cc541dbbd2c = $(`<div id="html_765c2a6e93071618a9381cc541dbbd2c" style="width: 100.0%; height: 100.0%;">7. High Street (NB)</div>`)[0];
+                popup_8a4f61ffa2bce51777df37a014e4ee89.setContent(html_765c2a6e93071618a9381cc541dbbd2c);
+            
+        
+
+        marker_905995c49f3557171c11787fe01e94cb.bindPopup(popup_8a4f61ffa2bce51777df37a014e4ee89)
+        ;
+
+        
+    
+    
+            marker_905995c49f3557171c11787fe01e94cb.bindTooltip(
+                `<div>
+                     7. High Street (NB)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_905995c49f3557171c11787fe01e94cb.setIcon(div_icon_d47128a6e79e3d18d99db223ab681939);
+            
+    
+            var marker_d808c73420885a1a22211b08f0700d8f = L.marker(
+                [40.071788, -74.855518],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_e8e526d7669e8a8eeb4172e2439b5777 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                8\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_7207feb25604f758da25a9b4e2bd6194 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_467d8b7355a3284d17329d98feadd75e = $(`<div id="html_467d8b7355a3284d17329d98feadd75e" style="width: 100.0%; height: 100.0%;">8. High Street (SB)</div>`)[0];
+                popup_7207feb25604f758da25a9b4e2bd6194.setContent(html_467d8b7355a3284d17329d98feadd75e);
+            
+        
+
+        marker_d808c73420885a1a22211b08f0700d8f.bindPopup(popup_7207feb25604f758da25a9b4e2bd6194)
+        ;
+
+        
+    
+    
+            marker_d808c73420885a1a22211b08f0700d8f.bindTooltip(
+                `<div>
+                     8. High Street (SB)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d808c73420885a1a22211b08f0700d8f.setIcon(div_icon_e8e526d7669e8a8eeb4172e2439b5777);
+            
+    
+            var marker_59480307a7fcdce10228c271b3725346 = L.marker(
+                [40.072135, -74.850511],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_5514d661f2dc10ef4ddc9ccde66111d2 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                9\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_712c47db1376090451eb8b9dfa2378fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0eabd43e37034fa8a2cced12b94e9e8f = $(`<div id="html_0eabd43e37034fa8a2cced12b94e9e8f" style="width: 100.0%; height: 100.0%;">9. Jacksonville (NB)</div>`)[0];
+                popup_712c47db1376090451eb8b9dfa2378fb.setContent(html_0eabd43e37034fa8a2cced12b94e9e8f);
+            
+        
+
+        marker_59480307a7fcdce10228c271b3725346.bindPopup(popup_712c47db1376090451eb8b9dfa2378fb)
+        ;
+
+        
+    
+    
+            marker_59480307a7fcdce10228c271b3725346.bindTooltip(
+                `<div>
+                     9. Jacksonville (NB)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_59480307a7fcdce10228c271b3725346.setIcon(div_icon_5514d661f2dc10ef4ddc9ccde66111d2);
+            
+    
+            var marker_9e53bc15b34202d10912dffa93b11291 = L.marker(
+                [40.072924, -74.851402],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_4b44d2639feae1a34cf9440624ef17ec = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                10\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_b565eafdcce3716ad16012fcdf399238 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a97d5ef2bc96f010f2327edcf7fa6015 = $(`<div id="html_a97d5ef2bc96f010f2327edcf7fa6015" style="width: 100.0%; height: 100.0%;">10. Jacksonville (SB)</div>`)[0];
+                popup_b565eafdcce3716ad16012fcdf399238.setContent(html_a97d5ef2bc96f010f2327edcf7fa6015);
+            
+        
+
+        marker_9e53bc15b34202d10912dffa93b11291.bindPopup(popup_b565eafdcce3716ad16012fcdf399238)
+        ;
+
+        
+    
+    
+            marker_9e53bc15b34202d10912dffa93b11291.bindTooltip(
+                `<div>
+                     10. Jacksonville (SB)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9e53bc15b34202d10912dffa93b11291.setIcon(div_icon_4b44d2639feae1a34cf9440624ef17ec);
+            
+    
+            var marker_e43814638fc7772b89e49f79e0ec164b = L.marker(
+                [40.079029, -74.841595],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_9e16f45644404fd97edac1fba9f87a8b = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                11\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_fa76c468245e75d70b7d9900c61ca5fc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_94b5da1a275da10272e658121183d6e7 = $(`<div id="html_94b5da1a275da10272e658121183d6e7" style="width: 100.0%; height: 100.0%;">11. Columbus Rd</div>`)[0];
+                popup_fa76c468245e75d70b7d9900c61ca5fc.setContent(html_94b5da1a275da10272e658121183d6e7);
+            
+        
+
+        marker_e43814638fc7772b89e49f79e0ec164b.bindPopup(popup_fa76c468245e75d70b7d9900c61ca5fc)
+        ;
+
+        
+    
+    
+            marker_e43814638fc7772b89e49f79e0ec164b.bindTooltip(
+                `<div>
+                     11. Columbus Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e43814638fc7772b89e49f79e0ec164b.setIcon(div_icon_9e16f45644404fd97edac1fba9f87a8b);
+            
+    
+            var marker_8f878923538c2167ffa402cde79a1ee8 = L.marker(
+                [40.088799, -74.824961],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_dfff6187ec94cf4a7f1334d0a4212c9c = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                12\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_792518c751ca6c50c173ea4024882e4a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_625b1f6a8c23ea657bb222fe398eba00 = $(`<div id="html_625b1f6a8c23ea657bb222fe398eba00" style="width: 100.0%; height: 100.0%;">12. Neck Rd</div>`)[0];
+                popup_792518c751ca6c50c173ea4024882e4a.setContent(html_625b1f6a8c23ea657bb222fe398eba00);
+            
+        
+
+        marker_8f878923538c2167ffa402cde79a1ee8.bindPopup(popup_792518c751ca6c50c173ea4024882e4a)
+        ;
+
+        
+    
+    
+            marker_8f878923538c2167ffa402cde79a1ee8.bindTooltip(
+                `<div>
+                     12. Neck Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8f878923538c2167ffa402cde79a1ee8.setIcon(div_icon_dfff6187ec94cf4a7f1334d0a4212c9c);
+            
+    
+            var marker_16d5d530fec95fe54b616eb9a2017277 = L.marker(
+                [40.093781, -74.813257],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_3b9f2931b4c2b48b5557ea6ef3580a3b = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                13\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_33f71d900294296723c991b39c36dcc5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_158a13cd4afd03b4bad32c91b7243e0c = $(`<div id="html_158a13cd4afd03b4bad32c91b7243e0c" style="width: 100.0%; height: 100.0%;">13. Dulty's Lane</div>`)[0];
+                popup_33f71d900294296723c991b39c36dcc5.setContent(html_158a13cd4afd03b4bad32c91b7243e0c);
+            
+        
+
+        marker_16d5d530fec95fe54b616eb9a2017277.bindPopup(popup_33f71d900294296723c991b39c36dcc5)
+        ;
+
+        
+    
+    
+            marker_16d5d530fec95fe54b616eb9a2017277.bindTooltip(
+                `<div>
+                     13. Dulty's Lane
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_16d5d530fec95fe54b616eb9a2017277.setIcon(div_icon_3b9f2931b4c2b48b5557ea6ef3580a3b);
+            
+    
+            var marker_ea8e9c50bc228a5cb079aa8850934b76 = L.marker(
+                [40.106721, -74.782954],
+                {
+}
+            ).addTo(map_778f8437153f792956dbaad7adc8a8c7);
+        
+    
+            var div_icon_8607b402fa104182e6801fe4b3dfe2e5 = L.divIcon({
+  "html": "\n            \u003cdiv style=\"font-size:12pt;font-weight:bold;\n                        color:white;background:red;\n                        border-radius:50%;width:24px;height:24px;\n                        text-align:center;line-height:24px;\"\u003e\n                14\n            \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+        var popup_70e9f2013411f91ce5cbda7383c0d13c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac353cc259a3f9a79fe2e3514357ac1b = $(`<div id="html_ac353cc259a3f9a79fe2e3514357ac1b" style="width: 100.0%; height: 100.0%;">14. Florence Columbus Rd</div>`)[0];
+                popup_70e9f2013411f91ce5cbda7383c0d13c.setContent(html_ac353cc259a3f9a79fe2e3514357ac1b);
+            
+        
+
+        marker_ea8e9c50bc228a5cb079aa8850934b76.bindPopup(popup_70e9f2013411f91ce5cbda7383c0d13c)
+        ;
+
+        
+    
+    
+            marker_ea8e9c50bc228a5cb079aa8850934b76.bindTooltip(
+                `<div>
+                     14. Florence Columbus Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ea8e9c50bc228a5cb079aa8850934b76.setIcon(div_icon_8607b402fa104182e6801fe4b3dfe2e5);
+            
+</script>
+</html>
